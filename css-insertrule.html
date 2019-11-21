@@ -12,6 +12,6 @@
 
   console.assert(sheet.cssRules.length === 0);
 
-  sheet.insertRule(':root { background: dodgerblue !important; }');
+  sheet.insertRule(':root { background: dodgerblue; }');
   console.assert(sheet.cssRules[0].styleMap.get('background').toString() === 'dodgerblue');
 </script>
