@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <title>Demo</title>
-<style>
-  :root { background: lime; }
-</style>
+
+<style class="textContent">p.textContent { background: lime; }</style>
+<p class="textContent">This paragraph's styles are dynamically updated using <code>Node.prototype.textContent</code>. Note how its styles are editable using the Styles panel.</p>
 <script>
-  const element = document.querySelector('style');
-  const sheet = element.sheet;
+  {
+    const element = document.querySelector('style.textContent');
+    element.textContent = 'p.textContent { background: dodgerblue; }';
+  }
+</script>
 
-  console.assert(sheet.cssRules[0].styleMap.get('background').toString() === 'lime');
-  sheet.deleteRule(0);
+<style class="insertRule">p.insertRule { background: lime; }</style>
+<p class="insertRule">This paragraph's styles are dynamically updated using <code>CSSStyleSheet.prototype.insertRule()</code>. Note how its styles are not editable using the Styles panel.</p>
+<script>
+  {
+    const element = document.querySelector('style.insertRule');
+    const sheet = element.sheet;
 
-  console.assert(sheet.cssRules.length === 0);
+    console.assert(sheet.cssRules[0].styleMap.get('background').toString() === 'lime');
+    sheet.deleteRule(0);
 
-  sheet.insertRule(':root { background: dodgerblue; }');
-  console.assert(sheet.cssRules[0].styleMap.get('background').toString() === 'dodgerblue');
+    console.assert(sheet.cssRules.length === 0);
+
+    sheet.insertRule('p.insertRule { background: dodgerblue; }');
+    console.assert(sheet.cssRules[0].styleMap.get('background').toString() === 'dodgerblue');
+  }
 </script>
