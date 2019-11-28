@@ -4,9 +4,11 @@
 <style>
   :root {
     font: 1rem/1.6 sans-serif;
-    padding-left: 100px;
-    padding-left: 50; /* Note: no unit! */
-    padding-left: var(--some-undefined-variable, 25); /* Same as above, but wrapped in a --var(). */
+    padding: 0; /* valid; the value 0 doesn't require a unit in this context */
+    padding: 10; /* invalid */
+    padding: 20px; /* valid */
+    padding: 30; /* invalid */
+    padding: var(--some-undefined-variable, 40); /* invalid; same as above, but wrapped in a --var() */
   }
 </style>
 <p>Inspect the root element.
