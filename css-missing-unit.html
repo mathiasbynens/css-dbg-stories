@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Unitless CSS property values</title>
+<style>
+  :root {
+    font: 1rem/1.6 sans-serif;
+    padding-left: 100px;
+    padding-left: 50; /* Note: no unit! */
+    padding-left: var(--some-undefined-variable, 25); /* Same as above, but wrapped in a --var(). */
+  }
+</style>
+<p>Inspect the root element.
