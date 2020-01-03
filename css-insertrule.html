@@ -26,6 +26,16 @@
     console.assert(sheet.cssRules.length === 0);
 
     sheet.insertRule('p.insertRule { border-color: dodgerblue; }');
-    console.assert(sheet.cssRules[0].styleMap.get('background').toString() === 'dodgerblue');
+    console.assert(sheet.cssRules[0].styleMap.get('border-color').toString() === 'dodgerblue');
+  }
+</script>
+
+<style class="CSSStyleSheet">p.CSSStyleSheet { border-color: lime; }</style>
+<p class="CSSStyleSheet">This paragraph's styles are dynamically updated using <code>CSSStyleSheet.prototype.replaceSync()</code>. Note how its styles are not editable using the Styles panel.</p>
+<script>
+  {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync('p.CSSStyleSheet { border-color: dodgerblue; }');
+    document.adoptedStyleSheets = [sheet];
   }
 </script>
