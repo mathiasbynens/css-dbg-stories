@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>Demo</title>
+<style>
+  @font-face {
+    font-family: Foo;
+    src: local('Some Local Font'),
+        local('Some Other Locally Installed Font'),
+        /* https://fonts.google.com/specimen/Alfa+Slab+One */
+        /* pyftsubset alfa-slab-one-v9-latin-regular.woff2 --output-file=a-f.woff2 --flavor=woff2 --layout-features='*' --unicodes=U+61-66 */
+        url(a-f.woff2) format('woff2');
+    unicode-range: U+61-66;
+  }
+
+  :root {
+    font-family: Foo, Bar, Baz, serif;
+  }
+</style>
+<ul>
+  <li>Outside of <code>unicode-range</code>: ABCDEFghijklmnopqrstuvwxyz
+  <li>Within <code>unicode-range</code>: abcdef
+  <li>Mixed: AaBbCcDdEeFf
+</ul>
