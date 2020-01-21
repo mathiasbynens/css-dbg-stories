@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<title>Variable font demo</title>
+<style>
+  @font-face {
+    /* https://github.com/TypeNetwork/Amstelvar
+       Copyright 2016 The Amstelvar Project Authors (info@fontbureau.com) */
+    font-family: Amstelvar Alpha;
+    src: url(variable-font.ttf) format('truetype');
+  }
+
+  :root {
+    font-family: Amstelvar Alpha;
+    font-size: 5em;
+    font-variation-settings:
+      "wght" 79.65,   /* 38-250 */
+      "wdth" 390.96,  /* 60-402 */
+      "opsz" 17.35,   /* 10-72 */
+      "XOPQ" 106.55,  /* 5-500 */
+      "XTRA" 198.83,  /* 42-402 */
+      "YOPQ" 67.93,   /* 4-85 */
+      "YTLC" 445,     /* 445-600 */
+      "YTSE" 19.25,   /* 0-48 */
+      "GRAD" 140.26,  /* 88-150 */
+      "XTCH" 1000,    /* 800-1200 */
+      "YTCH" 1000,    /* 800-1200 */
+      "YTAS" 850,     /* 650-850 */
+      "YTDE" 350,     /* 150-350 */
+      "YTUC" 650,     /* 650-950 */
+      "YTRA" 1164.34; /* 800-1200 */
+  }
+
+  .with-errors {
+    font-variation-settings:
+      "wght" 251, /* 38-250 */
+      "wdth" 59;  /* 60-402 */
+  }
+</style>
+<p>Lorem ipsum dolor sit amet.
+<p class="with-errors">Lorem ipsum dolor sit amet.
