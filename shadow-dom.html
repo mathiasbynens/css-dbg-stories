@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<title>Minimal shadow DOM example</title>
+<h1>Minimal shadow DOM example</h1>
+<script>
+  {
+    const header = document.createElement('header');
+    header.innerHTML = '<h2 id="out">Hello from regular DOM</h1><p>heh<p>huh';
+    document.body.appendChild(header);
+  }
+
+  {
+    const header = document.createElement('header');
+    const shadowRoot = header.attachShadow({ mode: 'open' });
+    shadowRoot.innerHTML = '<h2 id="in">Hello from Shadow DOM</h1><p>lol<p>wat';
+    document.body.appendChild(header);
+  }
+</script>
