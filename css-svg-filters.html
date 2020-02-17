@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<title>CSS + SVG filters</title>
+<style>
+  .filtered {
+    filter: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg">\
+        <filter id="grayscale">\
+          <feColorMatrix values="0.299 0.587 0.114 0 0\
+                                 0.299 0.587 0.114 0 0\
+                                 0.299 0.587 0.114 0 0\
+                                 0 0 0 1 0"/>\
+        </filter>\
+        <filter id="blur">\
+          <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>\
+        </filter>\
+      </svg>#grayscale');
+  }
+</style>
+<img src="https://placekitten.com/600/600" alt="">
+<img src="https://placekitten.com/600/600" alt="" class="filtered">
