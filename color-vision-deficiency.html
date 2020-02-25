@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <title>Demo</title>
 <style>
-  :root { font: 1rem/1.6 sans-serif; }
-  p { background: red; color: green; /* TODO: find values with acceptable contrast ratio without any CVDs, but not acceptable contrast ratio with a CVD */ }
+  :root { font: 5rem/1.6 sans-serif; }
+  #example-1 { background: #A8A800; color: #FF5703; }
+  #example-2 { background: #F1F100; color: #6AFF00; }
 </style>
-<p>Hello world!</p>
+<p id="example-1">This paragraph's background/text colors have terrible contrast for people with deuteranopia.</p>
+<p id="example-2">And this one too!</p>
