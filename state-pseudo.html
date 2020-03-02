@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<title>Custom :state pseudo-class</title>
+<h1>Custom <code>:state</code> pseudo-class</h1>
+<style>
+  my-element {
+    width: 2em;
+    height: 2em;
+    background: red;
+    display: inline-block;
+  }
+
+  my-element:state(checked) {
+    background: lime;
+  }
+</style>
+<script>
+  class MyElement extends HTMLElement {
+    #internals;
+    #checked = false;
+    constructor() {
+      super();
+      this.#internals = this.attachInternals();
+    }
+    get checked() {
+      return this.#checked;
+    }
+    set checked(value) {
+      this.#checked = value;
+      this.#internals.states.toggle('checked', Boolean(value));
+    }
+  }
+  customElements.define('my-element', MyElement);
+
+  const el = document.createElement('my-element');
+  document.body.appendChild(el);
+</script>
