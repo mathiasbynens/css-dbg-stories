@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>CSS + SVG filters</title>
+<style>
+  .filtered {
+    filter: url(#achromatomaly);
+  }
+  svg {
+    height: 0;
+    width: 0;
+  }
+</style>
+<svg>
+  <filter id="achromatomaly">
+    <feColorMatrix values="0.618 0.320 0.062 0.000 0.000
+                           0.163 0.775 0.062 0.000 0.000
+                           0.163 0.320 0.516 0.000 0.000
+                           0.000 0.000 0.000 1.000 0.000">
+  </filter>
+</svg>
+<img src="https://placekitten.com/600/600" alt="">
+<img src="https://placekitten.com/600/600" alt="" class="filtered">
