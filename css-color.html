@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>CSS color features: supported color gamuts, colorspaces, and color functions</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root {
+    --green: #C9DFAF;
+    --black: #000;
+    font: 1.4rem/1.6 monospace;
+  }
+  ul { font-size: 1.5rem; }
+  li { background: lightpink; }
+  @media (color-gamut: srgb) { #color-gamut\:srgb { background: var(--green); } }
+  @media (color-gamut: p3) { #color-gamut\:p3 { background: var(--green); } }
+
+  @supports (color: color(a98-rgb 0.44091 0.49971 0.37408)) { #a98-rgb { background: var(--green); } }
+  @supports (color: color(display-p3 0.43313 0.50108 0.37950)) { #display-p3 { background: var(--green); } }
+  @supports (color: color(prophoto-rgb 0.36589 0.41717 0.31333)) { #prophoto-rgb { background: var(--green); } }
+  @supports (color: color(rec2020 0.42210 0.47580 0.35605)) { #rec2020 { background: var(--green); } }
+  @supports (color: color(srgb 0.41587 0.503670 0.36664)) { #srgb { background: var(--green); } }
+  @supports (color: lab(51.2345% -13.6271 16.2401)) { #lab { background: var(--green); } }
+  @supports (color: lch(51.2345% 21.2 130)) { #lch { background: var(--green); } }
+</style>
+<h1>CSS color features</h1>
+<h2>Supported color gamuts</h2>
+<ul>
+  <li id="color-gamut:srgb"><code>@media (color-gamut: srgb) {}</code>
+  <li id="color-gamut:p3"><code>@media (color-gamut: p3) {}</code>
+</ul>
+<h2>Supported CSS colorspaces and color functions</h2>
+<ul>
+  <!-- https://drafts.csswg.org/css-color/#predefined -->
+  <li id="a98-rgb"><code>color: color(a98-rgb 0.44091 0.49971 0.37408);</code>
+  <li id="display-p3"><code>color: color(display-p3 0.43313 0.50108 0.37950);</code>
+  <li id="prophoto-rgb"><code>color: color(prophoto-rgb 0.36589 0.41717 0.31333);</code>
+  <li id="rec2020"><code>color: color(rec2020 0.42210 0.47580 0.35605);</code>
+  <li id="srgb"><code>color: color(srgb 0.41587 0.503670 0.36664);</code>
+  <li id="lab"><code>color: lab(51.2345% -13.6271 16.2401);</code>
+  <li id="lch"><code>color: lch(51.2345% 21.2 130);</code>
+</ul>
