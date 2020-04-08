@@ -10,8 +10,10 @@
   }
   ul { font-size: 1.5rem; }
   li { background: lightpink; }
-  @media (color-gamut: srgb) { #color-gamut\:srgb { background: var(--green); } }
+
   @media (color-gamut: p3) { #color-gamut\:p3 { background: var(--green); } }
+  @media (color-gamut: rec2020) { #color-gamut\:rec2020 { background: var(--green); } }
+  @media (color-gamut: srgb) { #color-gamut\:srgb { background: var(--green); } }
 
   @supports (color: color(a98-rgb 0.44091 0.49971 0.37408)) { #a98-rgb { background: var(--green); } }
   @supports (color: color(display-p3 0.43313 0.50108 0.37950)) { #display-p3 { background: var(--green); } }
@@ -24,12 +26,14 @@
 <h1>CSS color features</h1>
 <h2>Supported color gamuts</h2>
 <ul>
-  <li id="color-gamut:srgb"><code>@media (color-gamut: srgb) {}</code>
   <li id="color-gamut:p3"><code>@media (color-gamut: p3) {}</code>
+  <li id="color-gamut:rec2020"><code>@media (color-gamut: rec2020) {}</code>
+  <li id="color-gamut:srgb"><code>@media (color-gamut: srgb) {}</code>
 </ul>
 <h3>Supported color gamuts, as tested with <code>&lt;picture></code>/<code>&lt;source media></code></h3>
 <picture>
   <source media="(color-gamut: p3)" srcset='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">p3</text></svg>'>
+  <source media="(color-gamut: rec2020)" srcset='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">rec2020</text></svg>'>
   <source media="(color-gamut: srgb)" srcset='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">srgb</text></svg>'>
   <img src='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">?</text></svg>' alt="" width="64" height="64">
 </picture>
