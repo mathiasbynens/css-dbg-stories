@@ -27,6 +27,12 @@
   <li id="color-gamut:srgb"><code>@media (color-gamut: srgb) {}</code>
   <li id="color-gamut:p3"><code>@media (color-gamut: p3) {}</code>
 </ul>
+<h3>Supported color gamuts, as tested with <code>&lt;picture></code>/<code>&lt;source media></code></h3>
+<picture>
+  <source media="(color-gamut: p3)" srcset='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">p3</text></svg>'>
+  <source media="(color-gamut: srgb)" srcset='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">srgb</text></svg>'>
+  <img src='data:image/svg+xml,<svg%20xmlns="http://www.w3.org/2000/svg"><text%20y="32"%20font-size="32">?</text></svg>' alt="" width="64" height="64">
+</picture>
 <h2>Supported CSS colorspaces and color functions</h2>
 <ul>
   <!-- https://drafts.csswg.org/css-color/#predefined -->
