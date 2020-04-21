@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>Paste CSS colors into the picker!</title>
+<style>
+  :root {
+    font: 1rem/1.6 sans-serif;
+  }
+  div, pre {
+    background: hotpink;
+    border: 1px solid black;
+    padding: 1rem;
+  }
+  pre { background: hsl(198 28% 50% / 0.5); }
+</style>
+<p>Copy a CSS color in any format Chrome supports:</p>
+<pre><code>hsl(198 28% 50% / 0.5)</code></pre>
+<p>And now change the background color of this element:</p>
+<div>&nbsp;</div>
+<script>
+  document.querySelector('code').addEventListener('click', (event) => {
+    const target = event.target;
+    const selection = globalThis.getSelection();
+    const range = new Range();
+    range.selectNodeContents(target);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  });
+</script>
