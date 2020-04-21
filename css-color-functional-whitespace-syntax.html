@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<title>Support for functional (whitespace) syntax in CSS color</title>
+<script>
+    var values = [
+        'rgb(0 128 255)',
+        'rgb(0 128 255 / 0.5)',
+        'hsl(198 28% 50%)',
+        'hsl(198 28% 50% / 0.5)',
+        'rgba(51 170 51 / 40%)',
+        'hsl(.75turn, 60%, 70%)'
+    ];
+    for (var v of values) {
+        document.writeln(v + " supported=" + CSS.supports('color', v) + "<br />")
+    }
+</script>
