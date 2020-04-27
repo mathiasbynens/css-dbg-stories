@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>Shadow DOM Focus</title>
+<h1>Shadow DOM Focus</h1>
+<script>
+  {
+    const header = document.createElement('header');
+    header.innerHTML = `Long press on the label of checkbox 2 and observe the focus showing up a for a moment around checkbox 2.`;
+    document.body.appendChild(header);
+  }
+  {
+    const div = document.createElement('div');
+    const shadowRoot = div.attachShadow({ mode: 'open', delegatesFocus: true });
+    shadowRoot.tabindex = -1;
+    shadowRoot.innerHTML = `
+        <style>
+            :host{
+                outline: none;
+            }
+            input:focus {
+                outline: solid red 3px;
+            }
+        </style>
+        <div style="display: flex; flex-direction: column;">
+            <label>
+                <input type="checkbox" /> checkbox 1
+            </label>
+            <label>
+                <input type="checkbox" /> checkbox 2
+            </label>
+        </div>
+    `;
+    document.body.appendChild(div);
+  }
+</script>
