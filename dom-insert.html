@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<title>Minimal shadow DOM example</title>
+<h1>Minimal shadow DOM example</h1>
+<button onclick="render(createShadowDomElement);">
+    Render shadow DOM elements
+</button>
+<button onclick="render(createNormalElement)">
+    Render normal elements
+</button>
+<div id="dom">
+</div>
+<script>
+    function createShadowDomElement() {
+      const target = document.createElement('div');
+      const shadowRoot = target.attachShadow({ mode: 'open' });
+      const span = document.createElement('span');
+      span.textContent = 'Test span';
+      shadowRoot.appendChild(span);
+      return target;
+    }
+
+    function createNormalElement() {
+      const target = document.createElement('div');
+      const span = document.createElement('span');
+      span.textContent = 'Test span';
+      target.appendChild(span);
+      return target;
+    }
+
+    const dom = document.getElementById("dom");
+
+    function render(fn) {
+      const f = document.createDocumentFragment();
+      for (let i = 0; i < 7000; i++) {
+          f.appendChild(fn())
+      }
+      dom.appendChild(f);
+    }
+  </script>
