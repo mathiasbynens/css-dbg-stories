@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Background color</title>
+<style>
+  input {
+    height: 1.0625rem;
+    width: 1.0625rem;
+    border: 1px solid #a5a5a5;
+    border-radius: 0.5rem;
+    -webkit-appearance: none;
+    background-color: white;
+  }
+  input:checked {
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 9 9' xmlns='http://www.w3.org/2000/svg'><circle cx='4.5' cy='4.5' r='4.5'/></svg>") center no-repeat;
+    background-size: 9px 9px;
+  }
+  input:focus {
+    outline-width: 0;
+  }
+</style>
+<input checked type="radio" />
+
+<p>Zoom in and out and watch the dot position</p>
