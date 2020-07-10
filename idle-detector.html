@@ -4,13 +4,16 @@
 <div id="status"></div>
 <div id="error"></div>
 <script>
+  function log(target, msg) {
+    document.getElementById(target).appendChild(document.createTextNode(msg));
+    document.getElementById(target).appendChild(document.createElement('br'));
+  }
   async function main() {
     const hasPermission = await navigator.permissions.query({ name: 'notifications' });
     if (hasPermission.state !== 'granted') {
       const result = await Notification.requestPermission();
       if (result !== 'granted') {
-        document.getElementById('status').appendChild(document.createTextNode('Notifications permission not granted.'));
-        document.getElementById('status').appendChild(document.createElement('br'));
+        log('status', 'Notifications permission not granted.');
         return;
       }
     }
@@ -24,15 +27,12 @@
       idleDetector.addEventListener('change', (e) => {
         const userState = idleDetector.userState;
         const screenState = idleDetector.screenState;
-        document.getElementById('status').appendChild(document.createTextNode(`Idle change: ${userState}, ${screenState}.`));
-        document.getElementById('status').appendChild(document.createElement('br'));
+        log('status', `Idle change: ${userState}, ${screenState}.`);
       });
       await idleDetector.start();
-      document.getElementById('status').appendChild(document.createTextNode('Idle detector started'));
-      document.getElementById('status').appendChild(document.createElement('br'));
+      log('status', 'Idle detector started');
     } catch (e) {
-      document.getElementById('error').appendChild(document.createTextNode(e.message));
-      document.getElementById('error').appendChild(document.createElement('br'));
+      log('error', e.message);
     }
   }
   main();
