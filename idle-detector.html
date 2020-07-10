@@ -6,8 +6,12 @@
   async function main() {
     const hasPermission = await navigator.permissions.query({ name: 'notifications' });
     if (hasPermission.state !== 'granted') {
-      document.getElementById('status').textContent += 'Notifications permission not granted.';
-      document.getElementById('status').appendChild(document.createElement('br'));
+      const result = await Notification.requestPermission();
+      if (result !== 'granted') {
+        document.getElementById('status').textContent += 'Notifications permission not granted.';
+        document.getElementById('status').appendChild(document.createElement('br'));
+        return;
+      }
     }
     try {
       const controller = new AbortController();
@@ -20,7 +24,9 @@
         document.getElementById('status').textContent += JSON.stringify(e);
         document.getElementById('status').appendChild(document.createElement('br'));
       });
-      idleDetector.start();
+      await idleDetector.start();
+      document.getElementById('status').textContent += 'Idle detector started';
+      document.getElementById('status').appendChild(document.createElement('br'));
     } catch (e) {
       document.getElementById('error').textContent += e.message;
       document.getElementById('error').appendChild(document.createElement('br'));
