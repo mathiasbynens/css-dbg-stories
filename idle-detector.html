@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<title>Demo</title>
+<div id="status"></div>
+<div id="error"></div>
+<script>
+  async function main() {
+    const hasPermission = await navigator.permissions.query({ name: 'notifications' });
+    if (hasPermission.state !== 'granted') {
+      document.getElementById('status').textContent += 'Notifications permission not granted.';
+      document.getElementById('status').appendChild(document.createElement('br'));
+    }
+    try {
+      const controller = new AbortController();
+      const idleDetector = new IdleDetector({
+        threshold: 60000,
+        signal,
+      });
+      idleDetector.addEventListener('change', (e) => {
+        document.getElementById('status').textContent += JSON.stringify(e);
+        document.getElementById('status').appendChild(document.createElement('br'));
+      });
+      idleDetector.start();
+    } catch (e) {
+      document.getElementById('error').textContent += e.message;
+      document.getElementById('error').appendChild(document.createElement('br'));
+    }
+  }
+  main();
+</script>
