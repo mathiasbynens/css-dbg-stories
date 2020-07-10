@@ -11,6 +11,7 @@
     }
     try {
       const controller = new AbortController();
+      const signal = controller.signal;
       const idleDetector = new IdleDetector({
         threshold: 60000,
         signal,
