@@ -2,12 +2,14 @@
 <title>Color vision deficiency demo</title>
 <style>
   :root { font: 5rem/1.6 sans-serif; }
-  #example-1 { background: #A8A800; color: #FF5703; }
-  #example-2 { background: #F1F100; color: #6AFF00; }
-  #example-3 { background: #DDD068; color: #F4AD88; }
+  .example-1, .example-4 { background: #A8A800; color: #FF5703; }
+  .example-2 { background: #F1F100; color: #6AFF00; }
+  .example-3 { background: #DDD068; color: #F4AD88; }
+  .example-4 { appearance: none; border: 0; font-size: 0.6rem; }
 </style>
-<p id="example-1">This paragraph’s background/text colors have terrible contrast for people with protanopia or achromatomaly.</p>
-<p id="example-2">This one too.</p>
-<p id="example-3">This one has bad contrast with pretty much any color vision deficiency. Try protanopia, deuteranopia, and tritanopia.</p>
+<p class="example-1">This paragraph’s background/text colors have terrible contrast for people with protanopia or achromatomaly.</p>
+<p class="example-2">This one too.</p>
+<p class="example-3">This one has bad contrast with pretty much any color vision deficiency. Try protanopia, deuteranopia, and tritanopia.</p>
+<button class="example-4">Unreadable button</button>
 <figure><img src="ishihara-42.svg" width="600" height="599" alt="Ishihara color vision deficiency test image"></figure>
 <figure><img src="ishihara-ji.svg" width="600" height="602" alt="Ishihara color vision deficiency test image"></figure>
