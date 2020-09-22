@@ -13,7 +13,7 @@
     if (hasPermission.state !== 'granted') {
       const result = await IdleDetector.requestPermission();
       if (result !== 'granted') {
-        log('status', 'Notifications permission not granted.');
+        log('status', 'IdleDetector permission not granted.');
         return;
       }
     }
