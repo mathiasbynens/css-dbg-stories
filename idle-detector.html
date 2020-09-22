@@ -11,7 +11,7 @@
   async function main() {
     const hasPermission = await navigator.permissions.query({ name: 'idle-detection' });
     if (hasPermission.state !== 'granted') {
-      const result = await Notification.requestPermission();
+      const result = await IdleDetector.requestPermission();
       if (result !== 'granted') {
         log('status', 'Notifications permission not granted.');
         return;
