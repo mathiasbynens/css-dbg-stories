@@ -9,7 +9,7 @@
     document.getElementById(target).appendChild(document.createElement('br'));
   }
   async function main() {
-    const hasPermission = await navigator.permissions.query({ name: 'notifications' });
+    const hasPermission = await navigator.permissions.query({ name: 'idle-detection' });
     if (hasPermission.state !== 'granted') {
       const result = await Notification.requestPermission();
       if (result !== 'granted') {
