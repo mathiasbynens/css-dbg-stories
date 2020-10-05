@@ -35,3 +35,9 @@
   <source srcset="images/test.webp?notype">
   <img src="images/test.png?notype">
 </picture>
+
+<h2>missing avif img with on error fallback to png</h2>
+<img src="images/missing.avif" onerror="src='images/test.png'">
+
+<h2>existing avif img with on error fallback to png</h2>
+<img src="images/test.avif" onerror="src='images/test.png'">
