@@ -8,6 +8,13 @@
   <img src="images/test.png?regular">
 </picture>
 
+<h2>unknown type -> webp -> png</h2>
+<picture>
+  <source srcset="images/test.avif?something-obviously-unsupported" type="image/something-obviously-unsupported">
+  <source srcset="images/test.webp?something-obviously-unsupported" type="image/webp">
+  <img src="images/test.png?something-obviously-unsupported">
+</picture>
+
 <h2>not actually avif -> webp -> png</h2>
 <picture>
   <source srcset="images/test.fake.avif?fake-avif" type="image/avif">
