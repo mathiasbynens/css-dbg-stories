@@ -3,30 +3,30 @@
 
 <h2>avif -> webp -> png</h2>
 <picture>
-  <source srcset="images/test.avif" type="image/avif">
-  <source srcset="images/test.webp" type="image/webp">
-  <img src="images/test.png">
+  <source srcset="images/test.avif?regular" type="image/avif">
+  <source srcset="images/test.webp?regular" type="image/webp">
+  <img src="images/test.png?regular">
 </picture>
 
 <h2>not actually avif -> webp -> png</h2>
 <picture>
-  <source srcset="images/test.fake.avif" type="image/avif">
-  <source srcset="images/test.webp" type="image/webp">
-  <img src="images/test.png">
+  <source srcset="images/test.fake.avif?fake-avif" type="image/avif">
+  <source srcset="images/test.webp?fake-avif" type="image/webp">
+  <img src="images/test.png?fake-avif">
 </picture>
 
 <h2>not found -> webp -> png</h2>
 <picture>
-  <source srcset="images/missing.avif" type="image/avif">
-  <source srcset="images/test.webp" type="image/webp">
-  <img src="images/test.png">
+  <source srcset="images/missing.avif?not-found" type="image/avif">
+  <source srcset="images/test.webp?not-found" type="image/webp">
+  <img src="images/test.png?not-found">
 </picture>
 
 <h2>decode failure -> webp -> png</h2>
 <picture>
-  <source srcset="images/broken.avif" type="image/avif">
-  <source srcset="images/test.webp" type="image/webp">
-  <img src="images/test.png">
+  <source srcset="images/broken.avif?decode-error" type="image/avif">
+  <source srcset="images/test.webp?decode-error" type="image/webp">
+  <img src="images/test.png?decode-error">
 </picture>
 
 <h2>avif -> webp -> png (no image types)</h2>
@@ -37,7 +37,7 @@
 </picture>
 
 <h2>missing avif img with on error fallback to png</h2>
-<img src="images/missing.avif" onerror="src='images/test.png'">
+<img src="images/missing.avif?error-fallback" onerror="src='images/test.png?error-fallback'">
 
 <h2>existing avif img with on error fallback to png</h2>
-<img src="images/test.avif" onerror="src='images/test.png'">
+<img src="images/test.avif?error-fallback" onerror="src='images/test.png?error-fallback'">
