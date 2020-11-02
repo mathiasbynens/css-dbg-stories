@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <title>Demo</title>
 
-<h2>avif -> webp -> png</h2>
+<h2>AVIF -> WebP -> PNG</h2>
 <picture>
   <source srcset="images/test.avif?regular" type="image/avif">
   <source srcset="images/test.webp?regular" type="image/webp">
-  <img src="images/test.png?regular">
+  <img src="images/test.png?regular" width="341" height="138" alt="">
 </picture>
 
-<h2>unknown type -> webp -> png</h2>
+<h2>unknown type -> WebP -> PNG</h2>
 <picture>
   <source srcset="images/test.avif?something-obviously-unsupported" type="image/something-obviously-unsupported">
   <source srcset="images/test.webp?something-obviously-unsupported" type="image/webp">
-  <img src="images/test.png?something-obviously-unsupported">
+  <img src="images/test.png?something-obviously-unsupported" width="341" height="138" alt="">
 </picture>
 
-<h2>not actually avif -> webp -> png</h2>
+<h2>not actually AVIF -> WebP -> PNG</h2>
 <picture>
   <source srcset="images/test.fake.avif?fake-avif" type="image/avif">
   <source srcset="images/test.webp?fake-avif" type="image/webp">
-  <img src="images/test.png?fake-avif">
+  <img src="images/test.png?fake-avif" width="341" height="138" alt="">
 </picture>
 
-<h2>not found -> webp -> png</h2>
+<h2>not found -> WebP -> PNG</h2>
 <picture>
   <source srcset="images/missing.avif?not-found" type="image/avif">
   <source srcset="images/test.webp?not-found" type="image/webp">
-  <img src="images/test.png?not-found">
+  <img src="images/test.png?not-found" width="341" height="138" alt="">
 </picture>
 
-<h2>decode failure -> webp -> png</h2>
+<h2>decode failure -> WebP -> PNG</h2>
 <picture>
   <source srcset="images/broken.avif?decode-error" type="image/avif">
   <source srcset="images/test.webp?decode-error" type="image/webp">
-  <img src="images/test.png?decode-error">
+  <img src="images/test.png?decode-error" width="341" height="138" alt="">
 </picture>
 
-<h2>avif -> webp -> png (no image types)</h2>
+<h2>AVIF -> WebP -> PNG (no image types)</h2>
 <picture>
   <source srcset="images/test.avif?notype">
   <source srcset="images/test.webp?notype">
-  <img src="images/test.png?notype">
+  <img src="images/test.png?notype" width="341" height="138" alt="">
 </picture>
 
-<h2>missing avif img with on error fallback to png</h2>
-<img src="images/missing.avif?error-fallback" onerror="src='images/test.png?error-fallback'">
+<h2>missing AVIF img with on error fallback to PNG</h2>
+<img src="images/missing.avif?error-fallback" onerror="src='images/test.png?error-fallback'" width="341" height="138" alt="">
 
-<h2>existing avif img with on error fallback to png</h2>
-<img src="images/test.avif?error-fallback" onerror="src='images/test.png?error-fallback'">
+<h2>existing AVIF img with on error fallback to PNG</h2>
+<img src="images/test.avif?error-fallback" onerror="src='images/test.png?error-fallback'" width="341" height="138" alt="">
 
 <h2>image via CSS</h2>
 <div style="background: url(images/test.avif?css); width: 341px; height: 138px;"></div>
