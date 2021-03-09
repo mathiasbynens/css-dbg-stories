@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<title>Scroll Snap Demo</title>
+<style>
+  .gallery {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  .horizontal {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .vertical {
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .item {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    flex-shrink: 0;
+    margin: 10px;
+    padding: 10px;
+  }
+  .snap-align-center {
+    scroll-snap-align: center;
+  }
+  .snap-align-start {
+    scroll-snap-align: start;
+  }
+  .snap-align-end {
+    scroll-snap-align: end;
+  }
+  .rtl {
+    direction: rtl;
+  }
+  .wm-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+</style>
+<h3>Mixed snap-align with horizontal scroll</h3>
+<div class="gallery horizontal flex">
+  <div class="item snap-align-start">A</div>
+  <div class="item snap-align-center">B</div>
+  <div class="item snap-align-center">C</div>
+  <div class="item snap-align-end">D</div>
+</div>
+<h3>Mixed snap-align with vertical scroll</h3>
+<div class="gallery vertical">
+  <div class="item snap-align-start">A</div>
+  <div class="item snap-align-center">B</div>
+  <div class="item snap-align-center">C</div>
+  <div class="item snap-align-end">D</div>
+</div>
+
+<h3>Mixed snap-align with horizontal scroll and RTL direction</h3>
+<div class="gallery horizontal rtl flex">
+  <div class="item snap-align-start">A</div>
+  <div class="item snap-align-center">B</div>
+  <div class="item snap-align-center">C</div>
+  <div class="item snap-align-end">D</div>
+</div>
+
+<h3>Mixed snap-align with horizontal scroll and writing mode</h3>
+<div class="gallery horizontal wm-vertical-lr">
+  <div class="item snap-align-start">A</div>
+  <div class="item snap-align-center">B</div>
+  <div class="item snap-align-center">C</div>
+  <div class="item snap-align-end">D</div>
+</div>
