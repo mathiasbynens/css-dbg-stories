@@ -5,10 +5,16 @@
     height: 150px;
     width: 150px;
     border: 1px solid black;
+    scroll-padding: 10px;
   }
   .flex {
     display: flex;
     align-items: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .horizontal {
     scroll-snap-type: x mandatory;
@@ -20,13 +26,19 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
+  .both {
+    scroll-snap-type: both mandatory;
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
   .item {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: grey;
     flex-shrink: 0;
     margin: 10px;
     padding: 10px;
+    scroll-margin: 10px;
   }
   .snap-align-center {
     scroll-snap-align: center;
@@ -73,4 +85,17 @@
   <div class="item snap-align-center">B</div>
   <div class="item snap-align-center">C</div>
   <div class="item snap-align-end">D</div>
+</div>
+
+<h3>Mixed snap types</h3>
+<div class="gallery grid both">
+  <div class="item snap-align-start">A</div>
+  <div class="item snap-align-center">B</div>
+  <div class="item snap-align-center">C</div>
+  <div class="item snap-align-center">D</div>
+  <div class="item snap-align-center">E</div>
+  <div class="item snap-align-center">F</div>
+  <div class="item snap-align-center">G</div>
+  <div class="item snap-align-center">H</div>
+  <div class="item snap-align-end">I</div>
 </div>
