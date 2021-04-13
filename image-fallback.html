@@ -43,11 +43,23 @@
   <img src="images/test.png?notype" width="341" height="138" alt="">
 </picture>
 
-<h2>missing AVIF img with on error fallback to PNG</h2>
+<h2>JXL -> PNG</h2>
+<picture>
+  <source srcset="images/test.jxl?jxl" type="image/jxl">
+  <img src="images/test.png?jxl" width="341" height="138" alt="">
+</picture>
+
+<h2>missing AVIF img with an error fallback to PNG</h2>
 <img src="images/missing.avif?error-fallback" onerror="src='images/test.png?error-fallback'" width="341" height="138" alt="">
 
-<h2>existing AVIF img with on error fallback to PNG</h2>
+<h2>existing AVIF img with an error fallback to PNG</h2>
 <img src="images/test.avif?error-fallback" onerror="src='images/test.png?error-fallback'" width="341" height="138" alt="">
+
+<h2>existing JXL img with an error fallback to PNG</h2>
+<img src="images/test.jxl?error-fallback-jxl" onerror="src='images/test.png?error-fallback-jxl'" width="341" height="138" alt="">
 
 <h2>image via CSS</h2>
 <div style="background: url(images/test.avif?css); width: 341px; height: 138px;"></div>
+
+<h2>JXL image via CSS</h2>
+<div style="background: url(images/test.jxl?css-jxl); width: 341px; height: 138px;"></div>
