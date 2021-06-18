@@ -39,3 +39,9 @@
     document.adoptedStyleSheets = [sheet];
   }
 </script>
+
+<p class="css-module">This paragraph's styles are dynamically <code>import</code>ed from a CSS module <code>import sheet from './css-module.css' assert { type: 'css' };</code>.</p>
+<script type="module">
+  import sheet from './css-module.css' assert { type: 'css' };
+  document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+</script>
