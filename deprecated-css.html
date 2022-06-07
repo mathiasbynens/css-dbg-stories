@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<title>Deprecated CSS</title>
+<style> 
+  span {
+    color: red;  
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+  }
+
+  .grid-container > div {
+    background-color: #4285F4;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+  }
+</style>
+
+<h1>Deprecated CSS</h1>
+
+<p><strong>grid-container</strong> here is using <span>grid-gap</span> property, which was renamed to <span>'gap'</span> in CSS3</p>
+
+<div class="grid-container">
+  <div>Lorem</div>
+  <div>Ipsum</div>
+  <div>Dolor</div>  
+</div>

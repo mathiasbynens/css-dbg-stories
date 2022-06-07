@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<title>Inactive CSS</title>
+<style> 
+  .wrapper {
+    width: 100px;
+    height: 240px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    gap: 15px;
+  }
+
+  .wrapper > div {
+    width: 100px;
+    height: 75px;
+    background-color: #4285F4;
+  }
+
+  span {
+      color: red;
+  }
+</style>
+
+<h1>Inactive CSS</h1>
+
+<p><strong>wrapper</strong> class here is using <span>flex-wrap</span>: nowrap rule, therefore <span>'align-content'</span> has no effect. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content">Learn More</a> </p>
+
+<div class="wrapper">
+  <div></div>
+  <div></div>
+  <div></div>  
+</div>
