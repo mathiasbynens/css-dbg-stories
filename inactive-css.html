@@ -20,14 +20,62 @@
   code {
       color: red;
   }
+
+  .hint {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+  }
 </style>
 
 <h1>Inactive CSS</h1>
 
-<p><code>wrapper</code> class here is using <code>flex-wrap</code>: nowrap rule, therefore <code>'align-content'</code> has no effect. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content">Learn More</a> </p>
+<h2>align-content example</h2>
+
+<p><code>wrapper</code> class here is using <code>flex-wrap</code>: nowrap property, therefore <code>'align-content'</code> has no effect. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content">Learn More</a> </p>
 
 <div class="wrapper">
   <div></div>
   <div></div>
   <div></div>  
+</div>
+
+<h2>Other examples</h2>
+
+<p>Below are other examples of inactive CSS</p>
+
+<div class="hint" style="flex-direction: column; display: block;">
+  <div></div>
+</div>
+
+<div class="hint" style="grid-auto-flow: column dense; display: block;">
+  <div></div>
+</div>
+
+<div class="hint" style="display: block;">
+  <div style="grid-column: 1 /  span 2;"></div>
+</div>
+
+<div class="hint" style="display: block; align-items: first baseline;">
+  <div></div>
+</div>
+
+<div class="hint" style="display: block; gap: 100px;">
+  <div></div>
+</div>
+
+<div class="hint" style="display: table-row-group; padding: 20px;">
+  <div></div>
+</div>
+
+<div class="hint" style="position: static; top: 100px;">
+  <div></div>
+</div>
+
+<div class="hint" style="position: static; z-index: 100;">
+  <div></div>
+</div>
+
+<div class="hint">
+  <div style="z-index: 100;"></div>
 </div>
