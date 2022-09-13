@@ -1,0 +1,22 @@
+<script>
+  var iframe = document.createElement('iframe');
+  var sameOriginURL = 'index.html';
+  var crossOriginURL = 'https://example.com';
+</script>
+<header>
+  <button onclick="iframe.src = crossOriginURL; document.body.append(iframe)">
+    Append iframe with a cross-origin URL
+  </button>
+  <button onclick="iframe.src = sameOriginURL; document.body.append(iframe)">
+    Append iframe with a same-origin URL
+  </button>
+  <button onclick="iframe.src = sameOriginURL;">
+    Navigate iframe to a same-origin URL
+  </button>
+  <button onclick="iframe.src = crossOriginURL;">
+    Navigate iframe to a cross-origin URL
+  </button>
+  <button onclick="iframe.remove();">
+    Remove iframe
+  </button>
+</header>
