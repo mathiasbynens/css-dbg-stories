@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="padding: 2000px; background-color: green;"></div>
+  <button style="margin: 20px;">Click Me!</button>
+</body>
+<script>
+  const button = document.querySelector('button');
+  button.addEventListener('click', () => {
+    const rect = document.querySelector('button').getBoundingClientRect()
+    alert(['>>> Button clicked [x:', rect.x, 'y:', rect.y, 'width:', rect.width, 'height:', rect.height].join(' '));
+  });
+</script>
+
+</html>
