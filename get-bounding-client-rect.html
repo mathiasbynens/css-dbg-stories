@@ -19,7 +19,7 @@
   const button = document.querySelector('button');
   button.addEventListener('click', () => {
     const rect = document.querySelector('button').getBoundingClientRect()
-    alert(`button rect: [x:${rect.x}, y: ${rect.y}], viewport: ${window.visualViewport.width}x${window.visualViewport.height}`);
+    alert(`button rect: [x:${rect.x}, y: ${rect.y}], viewport: ${window.visualViewport.width}x${window.visualViewport.height}px, window.scrollY=${window.scrollY}`);
   });
 </script>
 
